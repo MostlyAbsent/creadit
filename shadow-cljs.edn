@@ -11,7 +11,7 @@
    :asset-path "/js"
    :devtools
    {:reload-strategy :full
-    :pre-loads [app.dev]}
+    :preloads [app.dev]}
    :modules
    {:main
     {:init-fn app.core/init}}}}}
