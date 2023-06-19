@@ -8,7 +8,7 @@
 
 (l/defnc app []
   (d/h1
-   {:class-name "text-sky-300"}
+   {:class-name "text-red-400"}
    "hellope"))
 
 (defn ^:export init []
