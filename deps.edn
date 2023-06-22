@@ -1,4 +1,4 @@
-{:paths ["src/cljs" "src/clj" "public"]
+{:paths ["src/cljs" "src/clj" "test/cljs" "public"]
  :deps {lilactown/helix {:mvn/version "0.1.10"}}
  :aliases
  {:cljs
