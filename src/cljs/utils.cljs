@@ -1,5 +1,6 @@
 (ns utils
-  (:require ["date-fns" :as df]))
+  (:require ["date-fns" :as df]
+            ["tailwind-merge" :as tw]))
 
 (def format-distance-locale
   {"minutes" "{{count}}m"
@@ -26,3 +27,11 @@
                           (.split " "))]
     (-> (format-distance token count)
         (add-temporal-context comparison))))
+
+(defn tw-merge [s & rest]
+  (if (not (nil? rest))
+    (->> (vec rest)
+         (cons s)
+         (clojure.string/join " ")
+         tw/twMerge)
+    (tw/twMerge s)))
