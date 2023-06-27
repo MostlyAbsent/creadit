@@ -1,5 +1,6 @@
 {:paths ["src/cljs" "src/clj" "test/cljs" "public"]
- :deps {lilactown/helix {:mvn/version "0.1.10"}}
+ :deps {lilactown/helix {:mvn/version "0.1.10"}
+        metosin/reitit {:mvn/version "0.7.0-alpha5"}}
  :aliases
  {:cljs
   {:extra-deps
