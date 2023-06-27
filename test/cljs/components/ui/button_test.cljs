@@ -68,3 +68,4 @@
 ;; is loading injector
 
 ;; child injector
+(cljs.test/run-tests)
