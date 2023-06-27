@@ -7,14 +7,14 @@
     "css:watch": "onchange 'public/js/main.js' -- npm run postcss:build",
     "shadow:release": "shadow-cljs release app",
     "postcss:build": "npx postcss global.css -o public/css/main.css",
-    "dev": "run-p -l *:watch",
+    "dev": "conc npm:*watch",
     "release": "run-s *:release"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
-    "npm-run-all": "^1.7.0",
+    "concurrently": "^8.2.0",
     "onchange": "^7.1.0",
     "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
