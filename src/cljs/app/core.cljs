@@ -11,25 +11,27 @@
    [app.lib :as l]))
 
 (l/defnc home []
-  (d/div "home"))
+  (d/div "Home"))
 
 (l/defnc sign-in []
-  (d/div "sign in"))
+  (d/div "Sign In"))
 
 (l/defnc app []
   ($ rr/BrowserRouter
      (d/section
       {:class-name "bg-white text-slate-900 antialiased light"}
-      ($ navbar)
       (d/div
        {:class-name "min-h-screen pt-12 bg-slate-50 antialiased"}
-       ($ rr/Routes
-          ($ rr/Route
-             {:path "/"
-              :element ($ home)})
-          ($ rr/Route
-             {:path "/sign-in"
-              :element ($ sign-in)}))))))
+      ($ navbar)
+       (d/div
+        {:class-name "container max-w-7xl mx-auto h-full pt-12"}
+        ($ rr/Routes
+           ($ rr/Route
+              {:path "/"
+               :element ($ home)})
+           ($ rr/Route
+              {:path "/sign-in"
+               :element ($ sign-in)})))))))
 
 (defn ^:export init []
   (defonce root (rdom/createRoot (js/document.getElementById "app")))

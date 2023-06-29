@@ -2,9 +2,9 @@
   (:require
    ["react-router-dom" :as rr]
    [components.icons :as icons]
+   [components.ui.button :as b]
    [helix.core :refer [$]]
-   [helix.dom :as d]
-   [components.ui.button :as b])
+   [helix.dom :as d])
   (:require-macros
    [app.lib :as l]))
 
@@ -19,7 +19,8 @@
        ($ icons/logo  {:class "w-8 h-8 sm:h-6 sm:w-6"})
        (d/p
         {:class "hidden text-zinc-700 text-sm font-medium md:block"} "Creadit"))
-    ($ rr/Link
-     {:to "/sign-in"
-      :class (b/button-variants {})}
-     "Sign In"))))
+    (d/div
+     ($ rr/Link
+        {:to "/sign-in"
+         :class (b/button-style {})}
+        "Sign In")))))
