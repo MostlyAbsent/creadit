@@ -2,7 +2,7 @@
   (:require
    [helix.dom :as d]
    [cljs.pprint]
-   [utils])
+   [utils :refer [tw-merge]])
   (:require-macros
    [app.lib :as l]))
 
