@@ -8,7 +8,7 @@
 
 (def button-variants
   {:class-name
-   "active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900"
+   "active:scale-95 inline-flex items-center justify-center rounded text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900"
    :variant
    {:default
     "bg-zinc-900 text-zinc-100 hover:bg-zinc-800"
@@ -33,17 +33,17 @@
     "h-11 px-8 rounded-md"}})
 
 (defn button-style [{:keys [variant size class-name]}]
-  {:class-name (tw-merge (:class-name button-variants) " "
-                         (if (nil? variant)
-                           (:default (:variant button-variants))
-                           (or (variant (:variant button-variants))
-                               (:default (:variant button-variants)))) " "
-                         (if (nil? size)
-                           (:default (:size button-variants))
-                           (or (size (:size button-variants))
-                               (:default (:size button-variants))))
-                         (if (not (nil? class-name))
-                           (str " " class-name)))})
+   (tw-merge (:class-name button-variants) " "
+                          (if (nil? variant)
+                            (:default (:variant button-variants))
+                            (or (variant (:variant button-variants))
+                                (:default (:variant button-variants)))) " "
+                          (if (nil? size)
+                            (:default (:size button-variants))
+                            (or (size (:size button-variants))
+                                (:default (:size button-variants))))
+                          (if (not (nil? class-name))
+                            (str " " class-name))))
 
 (defn button [{:keys [variant size class-name ref]}]
   (d/button {:ref ref
