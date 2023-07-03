@@ -32,18 +32,24 @@
     :lg
     "h-11 px-8 rounded-md"}})
 
-(defn button-style [{:keys [variant size class-name]}]
-   (tw-merge (:class-name button-variants) " "
-                          (if (nil? variant)
-                            (:default (:variant button-variants))
-                            (or (variant (:variant button-variants))
-                                (:default (:variant button-variants)))) " "
-                          (if (nil? size)
-                            (:default (:size button-variants))
-                            (or (size (:size button-variants))
-                                (:default (:size button-variants))))
-                          (if (not (nil? class-name))
-                            (str " " class-name))))
+(defn button-style
+  "Provides smart merged tailwind classes.
+
+  :variant a keyword matching a pre-defined button button-style
+  :size a keyword matching a pre-defined button size
+  :class-name a string of additional tailwind classes"
+  [{:keys [variant size class-name]}]
+  (tw-merge (:class-name button-variants) " "
+            (if (nil? variant)
+              (:default (:variant button-variants))
+              (or (variant (:variant button-variants))
+                  (:default (:variant button-variants)))) " "
+            (if (nil? size)
+              (:default (:size button-variants))
+              (or (size (:size button-variants))
+                  (:default (:size button-variants))))
+            (if (not (nil? class-name))
+              (str " " class-name))))
 
 (defn button [{:keys [variant size class-name ref]}]
   (d/button {:ref ref
