@@ -5,6 +5,7 @@
    ["react-router-dom" :as rr]
    ["react-dom/client" :as rdom]
    [components.navbar :refer [navbar]]
+   [components.sign-in :refer [sign-in-page]]
    [helix.hooks :as h]
    [helix.dom :as d])
   (:require-macros
@@ -12,9 +13,6 @@
 
 (l/defnc home []
   (d/div "Home"))
-
-(l/defnc sign-in []
-  (d/div "Sign In"))
 
 (l/defnc app []
   ($ rr/BrowserRouter
@@ -31,7 +29,7 @@
                :element ($ home)})
            ($ rr/Route
               {:path "/sign-in"
-               :element ($ sign-in)})))))))
+               :element ($ sign-in-page)})))))))
 
 (defn ^:export init []
   (defonce root (rdom/createRoot (js/document.getElementById "app")))
